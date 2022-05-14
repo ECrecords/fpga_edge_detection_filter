@@ -1,1 +1,3 @@
-# fpga_edge_detection_filter
+# ECE 520
+## Final Project
+###Elvis Chino-Islas

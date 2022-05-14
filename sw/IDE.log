@@ -1,0 +1,309 @@
+01:10:46 INFO  : Launching XSCT server: xsct -n  -interactive /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/temp_xsdb_launch_script.tcl
+01:10:46 INFO  : Platform repository initialization has completed.
+01:10:46 INFO  : Registering command handlers for Vitis TCF services
+01:10:49 INFO  : XSCT server has started successfully.
+01:10:49 INFO  : Successfully done setting XSCT server connection channel  
+01:10:50 INFO  : plnx-install-location is set to ''
+01:10:50 INFO  : Successfully done setting workspace for the tool. 
+01:10:50 INFO  : Successfully done query RDI_DATADIR 
+01:11:45 INFO  : Result from executing command 'getProjects': design_1_wrapper
+01:11:45 INFO  : Result from executing command 'getPlatforms': 
+01:11:45 WARN  : An unexpected exception occurred in the module 'platform project logging'
+01:11:45 INFO  : Platform 'design_1_wrapper' is added to custom repositories.
+01:12:05 INFO  : Platform 'design_1_wrapper' is added to custom repositories.
+01:13:19 INFO  : Result from executing command 'getProjects': design_1_wrapper
+01:13:19 INFO  : Result from executing command 'getPlatforms': design_1_wrapper|/home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm
+01:13:28 INFO  : Checking for BSP changes to sync application flags for project 'app'...
+01:13:50 INFO  : Checking for BSP changes to sync application flags for project 'app'...
+01:13:52 INFO  : Checking for BSP changes to sync application flags for project 'app'...
+01:13:53 INFO  : Checking for BSP changes to sync application flags for project 'app'...
+01:14:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:14:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A82589A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A82589A-23727093-0"}' command is executed.
+01:14:11 INFO  : Device configured successfully with "/home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/_ide/bitstream/design_1_wrapper.bit"
+01:14:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:14:17 INFO  : Jtag cable 'Digilent Zybo Z7 210351A82589A' is selected.
+01:14:17 INFO  : 'jtag frequency' command is executed.
+01:14:17 INFO  : Context for 'APU' is selected.
+01:14:17 INFO  : System reset is completed.
+01:14:20 INFO  : 'after 3000' command is executed.
+01:14:20 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A82589A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A82589A-23727093-0"}' command is executed.
+01:14:22 INFO  : Device configured successfully with "/home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/_ide/bitstream/design_1_wrapper.bit"
+01:14:22 INFO  : Context for 'APU' is selected.
+01:14:22 INFO  : Hardware design and registers information is loaded from '/home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+01:14:22 INFO  : 'configparams force-mem-access 1' command is executed.
+01:14:22 INFO  : Context for 'APU' is selected.
+01:14:22 INFO  : Sourcing of '/home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/_ide/psinit/ps7_init.tcl' is done.
+01:14:23 INFO  : 'ps7_init' command is executed.
+01:14:23 INFO  : 'ps7_post_config' command is executed.
+01:14:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:14:23 INFO  : The application '/home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/Debug/app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:14:23 INFO  : 'configparams force-mem-access 0' command is executed.
+01:14:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A82589A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A82589A-23727093-0"}
+fpga -file /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/Debug/app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:14:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:14:23 INFO  : 'con' command is executed.
+01:14:23 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+01:14:23 INFO  : Disconnected from the channel tcfchan#3.
+19:16:06 INFO  : Launching XSCT server: xsct -n  -interactive /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/temp_xsdb_launch_script.tcl
+19:16:07 INFO  : Platform repository initialization has completed.
+19:16:07 INFO  : Registering command handlers for Vitis TCF services
+19:16:09 INFO  : XSCT server has started successfully.
+19:16:09 INFO  : plnx-install-location is set to ''
+19:16:09 INFO  : Successfully done setting XSCT server connection channel  
+19:16:09 INFO  : Successfully done query RDI_DATADIR 
+19:16:09 INFO  : Successfully done setting workspace for the tool. 
+19:18:26 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:18:27 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A82589A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A82589A-23727093-0"}' command is executed.
+19:18:29 INFO  : Device configured successfully with "/home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/_ide/bitstream/design_1_wrapper.bit"
+19:18:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:18:33 INFO  : Jtag cable 'Digilent Zybo Z7 210351A82589A' is selected.
+19:18:33 INFO  : 'jtag frequency' command is executed.
+19:18:33 INFO  : Context for 'APU' is selected.
+19:18:33 INFO  : System reset is completed.
+19:18:36 INFO  : 'after 3000' command is executed.
+19:18:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A82589A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A82589A-23727093-0"}' command is executed.
+19:18:38 INFO  : Device configured successfully with "/home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/_ide/bitstream/design_1_wrapper.bit"
+19:18:38 INFO  : Context for 'APU' is selected.
+19:18:38 INFO  : Hardware design and registers information is loaded from '/home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+19:18:38 INFO  : 'configparams force-mem-access 1' command is executed.
+19:18:38 INFO  : Context for 'APU' is selected.
+19:18:38 INFO  : Sourcing of '/home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/_ide/psinit/ps7_init.tcl' is done.
+19:18:39 INFO  : 'ps7_init' command is executed.
+19:18:39 INFO  : 'ps7_post_config' command is executed.
+19:18:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:18:39 INFO  : The application '/home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/Debug/app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:18:39 INFO  : 'configparams force-mem-access 0' command is executed.
+19:18:39 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A82589A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A82589A-23727093-0"}
+fpga -file /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/Debug/app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:18:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:18:39 INFO  : 'con' command is executed.
+19:18:39 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+19:18:39 INFO  : Disconnected from the channel tcfchan#1.
+22:18:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:18:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A82589A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A82589A-23727093-0"}' command is executed.
+22:18:57 INFO  : Device configured successfully with "/home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/_ide/bitstream/design_1_wrapper.bit"
+22:19:01 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:19:01 INFO  : Jtag cable 'Digilent Zybo Z7 210351A82589A' is selected.
+22:19:01 INFO  : 'jtag frequency' command is executed.
+22:19:01 INFO  : Context for 'APU' is selected.
+22:19:01 INFO  : System reset is completed.
+22:19:04 INFO  : 'after 3000' command is executed.
+22:19:04 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A82589A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A82589A-23727093-0"}' command is executed.
+22:19:07 INFO  : Device configured successfully with "/home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/_ide/bitstream/design_1_wrapper.bit"
+22:19:07 INFO  : Context for 'APU' is selected.
+22:19:07 INFO  : Hardware design and registers information is loaded from '/home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+22:19:07 INFO  : 'configparams force-mem-access 1' command is executed.
+22:19:07 INFO  : Context for 'APU' is selected.
+22:19:07 INFO  : Sourcing of '/home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/_ide/psinit/ps7_init.tcl' is done.
+22:19:07 INFO  : 'ps7_init' command is executed.
+22:19:07 INFO  : 'ps7_post_config' command is executed.
+22:19:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:19:07 INFO  : The application '/home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/Debug/app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:19:07 INFO  : 'configparams force-mem-access 0' command is executed.
+22:19:07 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A82589A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A82589A-23727093-0"}
+fpga -file /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/Debug/app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:19:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:19:07 INFO  : 'con' command is executed.
+22:19:07 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+22:19:07 INFO  : Disconnected from the channel tcfchan#2.
+23:29:28 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:29:30 INFO  : Jtag cable 'Digilent Zybo Z7 210351A82589A' is selected.
+23:29:30 INFO  : 'jtag frequency' command is executed.
+23:29:30 INFO  : Context for 'APU' is selected.
+23:29:30 INFO  : System reset is completed.
+23:29:33 INFO  : 'after 3000' command is executed.
+23:29:34 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A82589A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A82589A-23727093-0"}' command is executed.
+23:29:36 INFO  : Device configured successfully with "/home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/_ide/bitstream/design_1_wrapper.bit"
+23:29:36 INFO  : Context for 'APU' is selected.
+23:29:49 INFO  : Hardware design and registers information is loaded from '/home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+23:29:49 INFO  : 'configparams force-mem-access 1' command is executed.
+23:29:49 INFO  : Context for 'APU' is selected.
+23:29:49 INFO  : Sourcing of '/home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/_ide/psinit/ps7_init.tcl' is done.
+23:29:49 INFO  : 'ps7_init' command is executed.
+23:29:49 INFO  : 'ps7_post_config' command is executed.
+23:29:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:29:50 INFO  : The application '/home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/Debug/app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+23:29:50 INFO  : 'configparams force-mem-access 0' command is executed.
+23:29:50 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A82589A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A82589A-23727093-0"}
+fpga -file /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/Debug/app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+23:29:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:29:50 INFO  : 'con' command is executed.
+23:29:50 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+23:29:50 INFO  : Disconnected from the channel tcfchan#3.
+23:30:00 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:30:00 INFO  : Jtag cable 'Digilent Zybo Z7 210351A82589A' is selected.
+23:30:00 INFO  : 'jtag frequency' command is executed.
+23:30:00 INFO  : Context for 'APU' is selected.
+23:30:00 INFO  : System reset is completed.
+23:30:03 INFO  : 'after 3000' command is executed.
+23:30:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A82589A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A82589A-23727093-0"}' command is executed.
+23:30:06 INFO  : Device configured successfully with "/home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/_ide/bitstream/design_1_wrapper.bit"
+23:30:06 INFO  : Context for 'APU' is selected.
+23:30:19 INFO  : Hardware design and registers information is loaded from '/home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+23:30:19 INFO  : 'configparams force-mem-access 1' command is executed.
+23:30:19 INFO  : Context for 'APU' is selected.
+23:30:19 INFO  : Sourcing of '/home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/_ide/psinit/ps7_init.tcl' is done.
+23:30:19 INFO  : 'ps7_init' command is executed.
+23:30:19 INFO  : 'ps7_post_config' command is executed.
+23:30:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:30:19 INFO  : The application '/home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/Debug/app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+23:30:20 INFO  : 'configparams force-mem-access 0' command is executed.
+23:30:20 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A82589A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A82589A-23727093-0"}
+fpga -file /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/Debug/app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+23:30:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:30:20 INFO  : 'con' command is executed.
+23:30:20 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+23:30:20 INFO  : Disconnected from the channel tcfchan#4.
+23:44:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:44:08 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A82589A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A82589A-23727093-0"}' command is executed.
+23:44:10 INFO  : Device configured successfully with "/home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/_ide/bitstream/design_1_wrapper.bit"
+23:44:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:44:16 INFO  : Jtag cable 'Digilent Zybo Z7 210351A82589A' is selected.
+23:44:16 INFO  : 'jtag frequency' command is executed.
+23:44:17 INFO  : Context for 'APU' is selected.
+23:44:17 INFO  : System reset is completed.
+23:44:20 INFO  : 'after 3000' command is executed.
+23:44:20 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A82589A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A82589A-23727093-0"}' command is executed.
+23:44:22 INFO  : Device configured successfully with "/home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/_ide/bitstream/design_1_wrapper.bit"
+23:44:22 INFO  : Context for 'APU' is selected.
+23:44:22 INFO  : Hardware design and registers information is loaded from '/home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+23:44:22 INFO  : 'configparams force-mem-access 1' command is executed.
+23:44:22 INFO  : Context for 'APU' is selected.
+23:44:22 INFO  : Sourcing of '/home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/_ide/psinit/ps7_init.tcl' is done.
+23:44:22 INFO  : 'ps7_init' command is executed.
+23:44:22 INFO  : 'ps7_post_config' command is executed.
+23:44:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:44:23 INFO  : The application '/home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/Debug/app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+23:44:23 INFO  : 'configparams force-mem-access 0' command is executed.
+23:44:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351A82589A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351A82589A-23727093-0"}
+fpga -file /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/Debug/app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+23:44:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:44:23 INFO  : 'con' command is executed.
+23:44:23 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+23:44:23 INFO  : Disconnected from the channel tcfchan#5.

@@ -1,0 +1,13 @@
+timestamp=[2022-05-13 01:10:46], mode=WORKBENCH_START, duration=0:00:07.396, duration_ms=7396, data={}
+timestamp=[2022-05-13 01:10:46], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.030, duration_ms=30, data={}
+timestamp=[2022-05-13 01:10:46], mode=WORKBENCH_UI_INIT, duration=0:00:00.324, duration_ms=324, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
+timestamp=[2022-05-13 01:12:05], mode=APP_CREATION, duration=0:00:39.588, duration_ms=39588, data={name=app, project_type=sdk, os=standalone, processor=ps7_cortexa9, runtime=cpp, platform=design_1_wrapper, application_type=application}
+timestamp=[2022-05-13 01:13:22], mode=PLATFORM_GENERATION, duration=0:00:10.209, duration_ms=10209, data={name=design_1_wrapper}
+timestamp=[2022-05-13 01:13:42], mode=BUILD, duration=0:00:00.684, duration_ms=684, data={name=app, configuration=Debug, clean_build=false}
+timestamp=[2022-05-13 01:13:50], mode=BUILD, duration=0:00:06.797, duration_ms=6797, data={name=app_system, configuration=Debug, clean_build=false}
+timestamp=[2022-05-13 01:13:51], mode=BUILD, duration=0:00:00.427, duration_ms=427, data={name=app, configuration=Debug, clean_build=false}
+timestamp=[2022-05-13 01:13:52], mode=BUILD, duration=0:00:00.424, duration_ms=424, data={name=app, configuration=Debug, clean_build=false}
+timestamp=[2022-05-13 01:13:54], mode=BUILD, duration=0:00:00.423, duration_ms=423, data={name=app, configuration=Debug, clean_build=false}
+timestamp=[2022-05-13 19:16:07], mode=WORKBENCH_START, duration=0:00:06.477, duration_ms=6477, data={}
+timestamp=[2022-05-13 19:16:07], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.019, duration_ms=19, data={}
+timestamp=[2022-05-13 19:16:08], mode=WORKBENCH_UI_INIT, duration=0:00:00.764, duration_ms=764, data={editors_count=3, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,app,app_system,design_1_wrapper}

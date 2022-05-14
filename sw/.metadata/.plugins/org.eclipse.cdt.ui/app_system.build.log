@@ -1,0 +1,10 @@
+01:13:43 **** Build of configuration Debug for project app_system ****
+make all 
+Generating bif file for the system project
+Executing command '::scw::generate_bif -xpfm /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm -domains standalone_ps7_cortexa9_0 -bifpath /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app_system/Debug/system.bif' on XSCT
+sdcard_gen --xpfm /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm --sys_config design_1_wrapper --bif /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app_system/Debug/system.bif --bitstream /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/_ide/bitstream/design_1_wrapper.bit --elf /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/Debug/app.elf,ps7_cortexa9_0
+creating BOOT.BIN using /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/_ide/bitstream/design_1_wrapper.bit
+Running /tools/Xilinx/Vitis/2021.2/bin/bootgen  -image /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+
+01:13:50 Build Finished (took 6s.789ms)
+

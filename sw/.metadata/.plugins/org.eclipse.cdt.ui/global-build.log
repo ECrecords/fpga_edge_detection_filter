@@ -1,0 +1,82 @@
+01:13:42 **** Build of configuration Debug for project app ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+ 
+make --no-print-directory main-build
+Building file: ../src/dynclk.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dynclk.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/dynclk.d" -MT"src/dynclk.o" -o "src/dynclk.o" "../src/dynclk.c"
+Finished building: ../src/dynclk.c
+ 
+Building file: ../src/helloworld.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:79:5: warning: implicit declaration of function 'disable_caches' [-Wimplicit-function-declaration]
+   79 |     disable_caches();
+      |     ^~~~~~~~~~~~~~
+../src/helloworld.c:94:5: warning: implicit declaration of function 'sleep' [-Wimplicit-function-declaration]
+   94 |     sleep(20);
+      |     ^~~~~
+../src/helloworld.c:82:9: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+   82 |     int Status;
+      |         ^~~~~~
+../src/helloworld.c:140:2: warning: 'result' is used uninitialized in this function [-Wuninitialized]
+  140 |  xil_printf("Video Mode = %i ", result);
+      |  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/helloworld.c
+ 
+Building file: ../src/platform.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+Finished building: ../src/platform.c
+ 
+Building target: app.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L/home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/standalone_ps7_cortexa9_0/bsplib/lib -o "app.elf"  ./src/dynclk.o ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: app.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size app.elf  |tee "app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  48869	   1304	11084704	11134877	 a9e79d	app.elf
+Finished building: app.elf.size
+ 
+
+01:13:42 Build Finished (took 671ms)
+
+01:13:43 **** Build of configuration Debug for project app_system ****
+make all 
+Generating bif file for the system project
+Executing command '::scw::generate_bif -xpfm /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm -domains standalone_ps7_cortexa9_0 -bifpath /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app_system/Debug/system.bif' on XSCT
+sdcard_gen --xpfm /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm --sys_config design_1_wrapper --bif /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app_system/Debug/system.bif --bitstream /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/_ide/bitstream/design_1_wrapper.bit --elf /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/Debug/app.elf,ps7_cortexa9_0
+creating BOOT.BIN using /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app/_ide/bitstream/design_1_wrapper.bit
+Running /tools/Xilinx/Vitis/2021.2/bin/bootgen  -image /home/elvis/Downloads/Hackster-master/Sobel_zybo_z7/sw/app_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+Nothing to build in platform 'design_1_wrapper'
+
+01:13:50 **** Incremental Build of configuration Debug for project app ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+ 
+make --no-print-directory main-build
+make[1]: Nothing to be done for 'main-build'.
+Nothing to build in platform 'design_1_wrapper'
+
+01:13:52 **** Incremental Build of configuration Debug for project app ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+ 
+make --no-print-directory main-build
+make[1]: Nothing to be done for 'main-build'.
+Nothing to build in platform 'design_1_wrapper'
+
+01:13:54 **** Incremental Build of configuration Debug for project app ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+ 
+make --no-print-directory main-build
+make[1]: Nothing to be done for 'main-build'.
